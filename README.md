@@ -1,3 +1,9 @@
+## Implementation Comments
+I used Context instead of Redux
+No responsivity was required in the exercise.
+It works visually well down to about 1280px wide
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
