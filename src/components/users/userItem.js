@@ -6,7 +6,7 @@ import './userItem.css'
 const UserItem = (user) => {
   const history = useHistory()
 
-  const handleEditUser = () => history.push(`/EditUser/:${user.id}`)
+  const handleEditUser = () => history.push(`/EditUser/${user.id}`)
 
   return (
     <li key={user.id} className='user-grid user-item'>
