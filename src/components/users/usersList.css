@@ -5,3 +5,18 @@
 .users-list-section header {
   background-color: #eee;
 }
+
+.users-list-section header .sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.users-list-section header .ascending:before {
+  content: '\25B2';
+  margin-right: 4px;
+}
+
+.users-list-section header .descending:before {
+  content: '\25BC';
+  margin-right: 4px;
+}

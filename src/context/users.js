@@ -49,7 +49,17 @@ const UserProvider = props => {
     if (users) {
       return users.find(user => user.id === id)
     }
-  } 
+  }
+
+  const sort = (direction) => {
+    const sorted = [...users]
+    if (direction === 'ascending') {
+      sorted.sort((a, b) => a.username.localeCompare(b.username))
+    } else if (direction === 'descending') {
+      sorted.sort((a, b) => b.username.localeCompare(a.username))
+    }
+    setUsers(sorted)
+  }
 
   useEffect(() => {
     fetchUsers()
@@ -63,6 +73,7 @@ const UserProvider = props => {
         handleDelete,
         handleEdit,
         loading,
+        sort,
         users
       }}
     >

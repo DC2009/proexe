@@ -9,6 +9,8 @@ import UserDeleteModal from './userDeleteModal'
 const UsersList = () => {
   const { handleDelete, loading, sort, users } = useContext(UserContext)
   const [ deleteUser, setDeleteUser ] = useState()
+  const [ sortDirection, setSortDirection ] = useState()
+
   const history = useHistory()
 
   const handleAddUser = () => history.push('/NewUser')
@@ -17,9 +19,20 @@ const UsersList = () => {
     setDeleteUser(user)
   }
 
+  const handleSort = () => {
+    if (sortDirection === 'ascending') {
+      setSortDirection('descending')
+      sort('descending')
+    } else {
+      setSortDirection('ascending')
+      sort('ascending')
+    }
+  }
+
   return (
     <div className='users-route'>
-      {deleteUser && <UserDeleteModal user={deleteUser} onCancel={() => setDeleteUser()} onOk={handleDelete}/>}
+      {deleteUser &&
+        <UserDeleteModal user={deleteUser} onCancel={() => setDeleteUser()} onOk={handleDelete}/>}
       <header>
         <h2>Users list</h2>
         <button onClick={handleAddUser}>Add New</button>
@@ -28,7 +41,7 @@ const UsersList = () => {
         <header className='user-grid'>
           <h3>Id</h3>
           <h3>Name</h3>
-          <h3>Username</h3>
+          <h3 className={`sortable ${sortDirection}`} onClick={handleSort}>Username</h3>
           <h3>Email</h3>
           <h3>City</h3>
           <h3>Edit</h3>
