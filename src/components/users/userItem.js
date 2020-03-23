@@ -8,7 +8,7 @@ const UserItem = (user, onEdit) => (
     <p>{user.name}</p>
     <p>{user.username}</p>
     <p>{user.email}</p>
-    <p>{user.address.city}</p>
+    <p>{user.address && user.address.city}</p>
     <button className='edit' onClick={() => onEdit(user.id)}>edit</button>
     <button className='delete'>delete</button>
   </li>

@@ -18,6 +18,28 @@ const UserProvider = props => {
     }
   }
 
+  const handleAdd = (name, email) => {
+    setUsers(users.concat([{
+      id: users.reduce((max, user) => max = Math.max(max, user.id), 0) + 1,
+      name: name,
+      email: email
+    }]))
+  }
+
+  const handleEdit = (id, name, email) => {
+    const user = getUser(id)
+    if (user) {
+      user.name = name
+      user.email = email
+    }
+  }
+
+  const getUser = id => {
+    if (users) {
+      return users.find(user => user.id === id)
+    }
+  } 
+
   useEffect(() => {
     fetchUsers()
   }, [])
@@ -25,6 +47,9 @@ const UserProvider = props => {
   return(
     <UserContext.Provider 
       value={{
+        getUser,
+        handleAdd,
+        handleEdit,
         loading,
         users
       }}

@@ -1,0 +1,57 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 40px 0;
+}
+
+.form-element-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 5%;
+}
+
+.form-element-wrapper > p {
+  display: block;
+  height: 20px;
+  margin-top: 8px;
+  margin-left: 10%;
+  color: red;
+}
+
+.error {
+  border-color: red;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.input-wrapper input {
+  max-width: 90%;
+  margin-left: 32px;
+  height: 40px;
+  padding-left: 12px;
+}
+
+.input-wrapper input:not([type='submit']) {
+  flex: 1;
+}
+
+.form-button {
+  width: 90px;
+  padding: 12px 0;
+}
+
+.cancel {
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+}
+
+.submit {
+  background-color: seagreen;
+}
