@@ -34,6 +34,17 @@ const UserProvider = props => {
     }
   }
 
+  const handleDelete = id => {
+    if (users) {
+      const idx = users.findIndex(user => user.id === id)
+      if (idx > -1) {
+        const newUsers = [...users]
+        newUsers.splice(idx, 1)
+        setUsers(newUsers)
+      }
+    }
+  }
+
   const getUser = id => {
     if (users) {
       return users.find(user => user.id === id)
@@ -49,6 +60,7 @@ const UserProvider = props => {
       value={{
         getUser,
         handleAdd,
+        handleDelete,
         handleEdit,
         loading,
         users

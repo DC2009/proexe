@@ -6,12 +6,16 @@ import { UserContext } from '../../context/users'
 import UserItem from './userItem'
 
 const UsersList = () => {
-  const { loading, users } = useContext(UserContext)
+  const { handleDelete, loading, users } = useContext(UserContext)
 
   const history = useHistory()
 
   const handleAddUser = () => history.push('/NewUser')
-  const handleEditUser = (id) => history.push(`/EditUser/${id}`)
+  const handleEditUser = id => history.push(`/EditUser/${id}`)
+  const handleDeleteUser = id => {
+    console.log(id)
+    handleDelete(id)
+  }
 
   return (
     <div className='users-route'>
@@ -33,7 +37,7 @@ const UsersList = () => {
           {loading && <h4>Loading data...</h4>}
           {users && 
             <ul>
-              {users.map(user => UserItem(user, handleEditUser))}
+              {users.map(user => UserItem(user, handleEditUser, handleDeleteUser))}
             </ul>
           }
         </div>
