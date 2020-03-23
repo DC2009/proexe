@@ -49,6 +49,11 @@ const UserForm = () => {
     })
   }
 
+  const handleCancel = (e) => {
+    e.preventDefault()
+    history.push('/')
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     const error = validate(name, email)
@@ -102,7 +107,7 @@ const UserForm = () => {
         </div>
         <div className='form-element-wrapper'>
           <div className='input-wrapper'>
-            <button className='form-button cancel' onClick={() => history.push('/')}>Cancel</button>
+            <button className='form-button cancel' onClick={handleCancel}>Cancel</button>
             <input className='form-button submit' type='submit' value='Submit'/>
           </div>
         </div>
