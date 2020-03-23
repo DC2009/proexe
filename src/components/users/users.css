@@ -21,6 +21,7 @@
 .user-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  column-gap: 8px;
   justify-items: center;
   align-items: center;
   height: 72px;
