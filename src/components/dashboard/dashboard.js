@@ -1,11 +1,12 @@
 import React from 'react'
 import './dashboard.css'
 import Header from './header'
+import UsersList from '../users/usersList'
 
 const Dashboard = () => (
   <div className='dashboard'>
     <Header/>
-    List
+    <UsersList/>
   </div>
 )
 
