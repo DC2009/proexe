@@ -1,16 +1,20 @@
 import React, { useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 import './usersList.css'
 import { UserContext } from '../../context/users'
 import UserItem from './userItem'
 
 const UsersList = () => {
   const { loading, users } = useContext(UserContext)
+  const history = useHistory()
+
+  const handleAddNew = () => history.push('/NewUser')
 
   return (
     <div className='users-list'>
       <header className='users-list-header'>
         <h2>Users list</h2>
-        <button>Add New</button>
+        <button onClick={handleAddNew}>Add New</button>
       </header>
       <section className='users-list-section'>
         <header className='user-grid'>

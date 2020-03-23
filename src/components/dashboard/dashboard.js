@@ -1,12 +1,12 @@
 import React from 'react'
 import './dashboard.css'
 import Header from './header'
-import UsersList from '../users/usersList'
+import Routes from '../router/routes'
 
 const Dashboard = () => (
   <div className='dashboard'>
     <Header/>
-    <UsersList/>
+    <Routes/>
   </div>
 )
 
