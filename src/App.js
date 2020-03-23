@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './App.css';
-import Dashboard from './components/dashboard';
+import Dashboard from './components/dashboard/dashboard';
 
 function App() {
   return (

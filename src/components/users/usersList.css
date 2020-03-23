@@ -1,0 +1,35 @@
+.users-list {
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+.users-list-header {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid grey;
+}
+
+.users-list-header button {
+  padding: 12px 28px;
+  background-color: dodgerblue;
+}
+
+.users-list-section {
+  padding: 12px;
+}
+
+.users-list-section header {
+  height: 72px;
+  background-color: #eee;
+  border: 1px solid grey;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+}
