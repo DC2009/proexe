@@ -1,24 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './users.css'
 import './usersList.css'
 import { UserContext } from '../../context/users'
 import UserItem from './userItem'
+import UserDeleteModal from './userDeleteModal'
 
 const UsersList = () => {
-  const { handleDelete, loading, users } = useContext(UserContext)
-
+  const { handleDelete, loading, sort, users } = useContext(UserContext)
+  const [ deleteUser, setDeleteUser ] = useState()
   const history = useHistory()
 
   const handleAddUser = () => history.push('/NewUser')
   const handleEditUser = id => history.push(`/EditUser/${id}`)
-  const handleDeleteUser = id => {
-    console.log(id)
-    handleDelete(id)
+  const handleDeleteUser = user => {
+    setDeleteUser(user)
   }
 
   return (
     <div className='users-route'>
+      {deleteUser && <UserDeleteModal user={deleteUser} onCancel={() => setDeleteUser()} onOk={handleDelete}/>}
       <header>
         <h2>Users list</h2>
         <button onClick={handleAddUser}>Add New</button>

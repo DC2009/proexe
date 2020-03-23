@@ -1,0 +1,50 @@
+.delete-modal {
+  background-color: white;
+  min-width: 280px;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+.delete-modal header, footer {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 20px;
+}
+
+.delete-modal header {
+  border-bottom: 1px solid grey;
+}
+
+.delete-modal footer {
+  justify-content: flex-end;
+  border-top: 1px solid grey;
+}
+
+.delete-modal button {
+  width: 80px;
+  padding: 8px;
+  margin-left: 12px;
+}
+
+.delete-modal .cancel-button {
+  background-color: dimgray;
+}
+
+.delete-modal .delete-button {
+  background-color: firebrick;
+}
+
+.delete-modal .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.delete-modal .user-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+

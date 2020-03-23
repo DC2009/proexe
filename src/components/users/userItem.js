@@ -10,7 +10,7 @@ const UserItem = (user, onEdit, onDelete) => (
     <p>{user.email}</p>
     <p>{user.address && user.address.city}</p>
     <button className='edit' onClick={() => onEdit(user.id)}>edit</button>
-    <button className='delete' onClick={() => onDelete(user.id)}>delete</button>
+    <button className='delete' onClick={() => onDelete(user)}>delete</button>
   </li>
 )
 
