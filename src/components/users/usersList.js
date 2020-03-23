@@ -6,15 +6,17 @@ import UserItem from './userItem'
 
 const UsersList = () => {
   const { loading, users } = useContext(UserContext)
+
   const history = useHistory()
 
-  const handleAddNew = () => history.push('/NewUser')
+  const handleAddUser = () => history.push('/NewUser')
+  const handleEditUser = (id) => history.push(`/EditUser/${id}`)
 
   return (
     <div className='users-list'>
       <header className='users-list-header'>
         <h2>Users list</h2>
-        <button onClick={handleAddNew}>Add New</button>
+        <button onClick={handleAddUser}>Add New</button>
       </header>
       <section className='users-list-section'>
         <header className='user-grid'>
@@ -30,7 +32,7 @@ const UsersList = () => {
           {loading && <h4>Loading data...</h4>}
           {users && 
             <ul>
-              {users.map(user => UserItem(user))}
+              {users.map(user => UserItem(user, handleEditUser))}
             </ul>
           }
         </div>
