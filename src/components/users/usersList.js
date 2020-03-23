@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
+import './users.css'
 import './usersList.css'
 import { UserContext } from '../../context/users'
 import UserItem from './userItem'
@@ -13,8 +14,8 @@ const UsersList = () => {
   const handleEditUser = (id) => history.push(`/EditUser/${id}`)
 
   return (
-    <div className='users-list'>
-      <header className='users-list-header'>
+    <div className='users-route'>
+      <header>
         <h2>Users list</h2>
         <button onClick={handleAddUser}>Add New</button>
       </header>

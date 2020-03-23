@@ -1,0 +1,28 @@
+.users-route {
+  border: 1px solid grey;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.7);
+}
+
+.users-route > header {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid grey;
+}
+
+.users-route > header > button {
+  padding: 12px 28px;
+  background-color: dodgerblue;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+  height: 72px;
+  border: 1px solid grey;
+}

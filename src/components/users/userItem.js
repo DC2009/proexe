@@ -1,5 +1,5 @@
 import React from 'react'
-import './usersList.css'
+import './users.css'
 import './userItem.css'
 
 const UserItem = (user, onEdit) => (
